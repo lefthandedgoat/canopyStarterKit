@@ -10,9 +10,8 @@ let fromString<'a> s =
 
 //types
 type Tag =
-  | Page1
-  | Page2
-  | Page3
+  | All
+  | Misc
 
 type Arguments =
   {

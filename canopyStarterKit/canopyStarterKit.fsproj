@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="common.fs" />
     <Compile Include="args.fs" />
+    <Compile Include="pages/page_index.fs" />
+    <Compile Include="tests/misc.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

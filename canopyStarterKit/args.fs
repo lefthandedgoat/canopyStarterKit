@@ -11,7 +11,7 @@ type private CLIArguments =
       member s.Usage =
         match s with
         | Browser _ -> "specicfy a browser (Chrome Firefox IE)."
-        | Tagz _ -> "specify tags (Page1 Page2 Page3...)."
+        | Tagz _ -> "specify tags (All Misc etc)."
 
 let parse cliargs =
   let parser = ArgumentParser.Create<CLIArguments>()

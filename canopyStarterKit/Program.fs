@@ -1,16 +1,21 @@
 module Program
 
 open canopy
-open runner
+open reporters
 
 [<EntryPoint>]
 let main argv =
- let args = args.parse argv
+  reporter <- new LiveHtmlReporter(Firefox, "") :> IReporter
+  reporter.setEnvironment "canopy test page"
 
- start args.Browser
+  let args = args.parse argv
+  start args.Browser
 
- System.Console.ReadKey() |> ignore
+  misc.all()
+  run()
 
- quit ()
+  System.Console.ReadKey() |> ignore
+  quit ()
 
- 0
+  //return code
+  canopy.runner.failedCount
