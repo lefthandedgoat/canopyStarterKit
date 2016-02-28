@@ -1,13 +1,7 @@
 module args
 
 open Argu
-open Microsoft.FSharp.Reflection
 open common
-
-let private fromString<'a> s =
-  match FSharpType.GetUnionCases typeof<'a> |> Array.filter (fun case -> case.Name = s) with
-    | [|case|] -> FSharpValue.MakeUnion(case,[||]) :?> 'a
-    | _ -> failwith <| sprintf "Can't convert %s to DU" s
 
 type private CLIArguments =
   | Browser of string
