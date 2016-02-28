@@ -6,6 +6,11 @@ open runner
 [<EntryPoint>]
 let main argv =
  let args = args.parse argv
- printfn "%A" args
+
+ start args.Browser
+
+ System.Console.ReadKey() |> ignore
+
+ quit ()
 
  0
