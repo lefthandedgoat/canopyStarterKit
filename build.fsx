@@ -43,7 +43,7 @@ let tags = "canopy uiautomation f# fsharp"
 let solutionFile  = "canopyStarterKit.sln"
 
 // Pattern specifying assemblies to be tested using NUnit
-let exe = "canopyStarterKit/bin/Debug/"
+let exe = "bin/canopyStarterKit"
 
 // --------------------------------------------------------------------------------------
 // END TODO: The rest of the file includes standard build steps
@@ -116,6 +116,7 @@ Target "RunExe" (fun _ ->
   let result =
     ExecProcess (fun info ->
                  info.FileName <- (exe @@ "canopyStarterKit.exe")
+                 info.Arguments <- """--browser Chrome --tagz 'Page1 Page2 Page3'"""
                  ) (System.TimeSpan.FromMinutes 5.)
 
   if result <> 0 then failwith "Failed result from unit tests"
