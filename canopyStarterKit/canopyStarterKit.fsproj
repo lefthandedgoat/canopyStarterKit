@@ -68,6 +68,7 @@
     <Compile Include="tests/assertions.fs" />
     <Compile Include="tests/elements.fs" />
     <Compile Include="tests/misc.fs" />
+    <Compile Include="tests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

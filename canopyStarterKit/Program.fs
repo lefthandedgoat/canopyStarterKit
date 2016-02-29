@@ -2,6 +2,7 @@ module Program
 
 open canopy
 open reporters
+open common
 
 [<EntryPoint>]
 let main argv =
@@ -11,10 +12,7 @@ let main argv =
   let args = args.parse argv
   start args.Browser
 
-  actions.all()
-  assertions.all()
-  elementz.all()
-  misc.all()
+  tests.register Tag.All TestType.UnderDevelopment
   run()
 
   System.Console.ReadKey() |> ignore

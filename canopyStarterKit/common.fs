@@ -11,7 +11,16 @@ let fromString<'a> s =
 //types
 type Tag =
   | All
+  | Actions
+  | Assertions
+  | Elements
   | Misc
+
+type TestType =
+  | All
+  | Smoke
+  | Full
+  | UnderDevelopment
 
 type Arguments =
   {
