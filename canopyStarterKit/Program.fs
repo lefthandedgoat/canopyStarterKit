@@ -13,6 +13,7 @@ let main argv =
 
   actions.all()
   assertions.all()
+  elementz.all()
   misc.all()
   run()
 
