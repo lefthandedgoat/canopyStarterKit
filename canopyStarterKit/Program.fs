@@ -11,6 +11,8 @@ let main argv =
   let args = args.parse argv
   start args.Browser
 
+  actions.all()
+  assertions.all()
   misc.all()
   run()
 
