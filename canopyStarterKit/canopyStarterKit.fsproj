@@ -284,4 +284,12 @@
       <Paket>True</Paket>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="chromedriver.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="chromedriver">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

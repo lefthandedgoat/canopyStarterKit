@@ -121,9 +121,9 @@ let run args =
 
   if result <> 0 then failwith "Failed result from unit tests"
 
-Target "Dev" (fun _ -> run """--browser Firefox --tag All --testtype UnderDevelopment""")
+Target "Dev" (fun _ -> run """--browser Chrome --tag All --testtype UnderDevelopment""")
 
-Target "All" (fun _ -> run """--browser Firefox --tag All --testtype All""")
+Target "All" (fun _ -> run """--browser Chrome --tag All --testtype All""")
 
 // --------------------------------------------------------------------------------------
 // Run all targets by default. Invoke 'build <Target>' to override

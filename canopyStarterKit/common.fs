@@ -8,6 +8,8 @@ let fromString<'a> s =
     | [|case|] -> FSharpValue.MakeUnion(case,[||]) :?> 'a
     | _ -> failwith <| sprintf "Can't convert %s to DU" s
 
+let executingDir () = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)
+
 //types
 type Tag =
   | All

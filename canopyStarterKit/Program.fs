@@ -6,8 +6,9 @@ open common
 
 [<EntryPoint>]
 let main argv =
-  //reporter <- new LiveHtmlReporter(Firefox, "") :> IReporter
-  //reporter.setEnvironment "canopy test page"
+  configuration.chromeDir <- executingDir()
+  reporter <- new LiveHtmlReporter(Chrome, configuration.chromeDir) :> IReporter
+  reporter.setEnvironment "canopy test page"
 
   let args = args.parse argv
   start args.Browser
