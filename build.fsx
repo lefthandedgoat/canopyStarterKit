@@ -112,26 +112,34 @@ Target "Build" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Run the unit tests using test runner
 
-Target "RunExe" (fun _ ->
+let run args =
   let result =
     ExecProcess (fun info ->
                  info.FileName <- (exe @@ "canopyStarterKit.exe")
-                 info.Arguments <- """--browser Firefox --tag All --testtype UnderDevelopment"""
+                 info.Arguments <- args
                  ) (System.TimeSpan.FromMinutes 5.)
 
   if result <> 0 then failwith "Failed result from unit tests"
-)
+
+Target "Dev" (fun _ -> run """--browser Firefox --tag All --testtype UnderDevelopment""")
+
+Target "All" (fun _ -> run """--browser Firefox --tag All --testtype All""")
 
 // --------------------------------------------------------------------------------------
 // Run all targets by default. Invoke 'build <Target>' to override
 
-Target "All" DoNothing
+Target "BuildStuff" DoNothing
 
 "Clean"
   ==> "AssemblyInfo"
   ==> "Build"
   ==> "CopyBinaries"
-  ==> "RunExe"
+  ==> "BuildStuff"
+
+"BuildStuff"
   ==> "All"
 
-RunTargetOrDefault "All"
+"BuildStuff"
+  ==> "Dev"
+
+RunTargetOrDefault "Dev"
