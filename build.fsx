@@ -116,7 +116,7 @@ Target "RunExe" (fun _ ->
   let result =
     ExecProcess (fun info ->
                  info.FileName <- (exe @@ "canopyStarterKit.exe")
-                 info.Arguments <- """--browser Firefox --tagz 'All'"""
+                 info.Arguments <- """--browser Firefox --tag All --testtype UnderDevelopment"""
                  ) (System.TimeSpan.FromMinutes 5.)
 
   if result <> 0 then failwith "Failed result from unit tests"

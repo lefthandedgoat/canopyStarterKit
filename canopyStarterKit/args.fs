@@ -5,21 +5,22 @@ open common
 
 type private CLIArguments =
   | Browser of string
-  | Tagz of string
+  | Tag of string
+  | TestType of string
   with
     interface IArgParserTemplate with
       member s.Usage =
         match s with
         | Browser _ -> "specicfy a browser (Chrome Firefox IE)."
-        | Tagz _ -> "specify tags (All Misc etc)."
+        | Tag _ -> "specify tag (All Misc etc)."
+        | TestType _ -> "specify testType (All Smoke Full UnderDevelopment)."
 
 let parse cliargs =
   let parser = ArgumentParser.Create<CLIArguments>()
   let results = parser.Parse(cliargs)
 
-  let parseTags (ts : string) = ts.Split(' ') |> Array.map fromString<Tag> |> List.ofArray
-
   {
     Browser = results.PostProcessResult (<@ Browser @>, fromString<canopy.types.BrowserStartMode>)
-    Tags = results.PostProcessResult (<@ Tagz @>, parseTags)
+    Tag = results.PostProcessResult (<@ Tag @>, fromString<Tag>)
+    TestType = results.PostProcessResult (<@ TestType @>, fromString<TestType>)
   }

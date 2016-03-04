@@ -25,5 +25,6 @@ type TestType =
 type Arguments =
   {
     Browser : canopy.types.BrowserStartMode
-    Tags : Tag list
+    Tag : Tag
+    TestType : TestType
   }

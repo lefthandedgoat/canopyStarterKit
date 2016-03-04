@@ -6,13 +6,13 @@ open common
 
 [<EntryPoint>]
 let main argv =
-  reporter <- new LiveHtmlReporter(Firefox, "") :> IReporter
-  reporter.setEnvironment "canopy test page"
+  //reporter <- new LiveHtmlReporter(Firefox, "") :> IReporter
+  //reporter.setEnvironment "canopy test page"
 
   let args = args.parse argv
   start args.Browser
 
-  tests.register Tag.All TestType.UnderDevelopment
+  tests.register args.Tag args.TestType
   run()
 
   System.Console.ReadKey() |> ignore
