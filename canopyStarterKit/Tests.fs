@@ -4,9 +4,9 @@ open Common
 
 //Usually just uncomment the test you are working on
 let underDevelopment () =
-  //actions.all()
-  //assertions.all()
-  //elementz.all()
+  //Actions.all()
+  //Assertions.all()
+  //Elementz.all()
   Misc.all()
 
 let all =
