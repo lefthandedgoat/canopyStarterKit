@@ -1,7 +1,7 @@
-module args
+module Args
 
 open Argu
-open common
+open Common
 
 type private CLIArguments =
   | Browser of string

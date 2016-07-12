@@ -1,4 +1,4 @@
-module common
+module Common
 
 open Microsoft.FSharp.Reflection
 

@@ -1,4 +1,4 @@
-module page_index
+module PageIndex
 
 let uri = "http://lefthandedgoat.github.io/canopy/testpages/"
 

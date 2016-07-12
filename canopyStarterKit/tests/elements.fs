@@ -1,11 +1,11 @@
-module elementz
+module Elementz
 
 open canopy
-open page_elementWithin
+open PageElementWithin
 
 let smoke () =
   context "smoke elements"
-  before (fun _ -> url page_elementWithin.uri)
+  before (fun _ -> url PageElementWithin.uri)
 
   "element within only searching within the element" &&& fun _ ->
     count items 5
@@ -13,7 +13,7 @@ let smoke () =
 
 let full () =
   context "full elements"
-  before (fun _ -> url page_elementWithin.uri)
+  before (fun _ -> url PageElementWithin.uri)
 
   "elements within only searching within element" &&& fun _ ->
     count items 5

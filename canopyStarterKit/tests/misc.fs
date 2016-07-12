@@ -1,10 +1,10 @@
-module misc
+module Misc
 
 open canopy
 
 let smoke () =
   context "smoke tests for misc canopy features"
-  before (fun _ -> url page_index.uri)
+  before (fun _ -> url PageIndex.uri)
 
   "intentionally skipped shows blue in LiveHtmlReport" &&! skipped
 
@@ -13,7 +13,7 @@ let smoke () =
 
 let full () =
   context "full tests for misc canopy features"
-  before (fun _ -> url page_index.uri)
+  before (fun _ -> url PageIndex.uri)
 
   ntest "find by label, following field" (fun _ ->
     "Test Field 1" == "test value 1")
