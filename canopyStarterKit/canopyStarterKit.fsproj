@@ -61,15 +61,15 @@
   </Target>
   -->
   <ItemGroup>
-    <Compile Include="common.fs" />
-    <Compile Include="args.fs" />
-    <Compile Include="pages/page_elementWithin.fs" />
-    <Compile Include="pages/page_index.fs" />
-    <Compile Include="tests/actions.fs" />
-    <Compile Include="tests/assertions.fs" />
-    <Compile Include="tests/elements.fs" />
-    <Compile Include="tests/misc.fs" />
-    <Compile Include="tests.fs" />
+    <Compile Include="Common.fs" />
+    <Compile Include="Args.fs" />
+    <Compile Include="pages/PageElementWithin.fs" />
+    <Compile Include="pages/PageIndex.fs" />
+    <Compile Include="tests/Actions.fs" />
+    <Compile Include="tests/Assertions.fs" />
+    <Compile Include="tests/Elements.fs" />
+    <Compile Include="tests/Misc.fs" />
+    <Compile Include="Tests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,18 +1,18 @@
-module assertions
+module Assertions
 
 open canopy
-open page_index
+open PageIndex
 
 let smoke () =
   context "smoke assertions"
-  before (fun _ -> url page_index.uri)
+  before (fun _ -> url PageIndex.uri)
 
   "#firstName should have John (using == infix operator)" &&& fun _ ->
     firstName == "John"
 
 let full () =
   context "full assertions"
-  before (fun _ -> url page_index.uri)
+  before (fun _ -> url PageIndex.uri)
 
   "id('firstName') should have John (using == infix operator), basic xpath test" &&& fun _ ->
     firstNameXpath == "John"

@@ -1,25 +1,25 @@
-module tests
+module Tests
 
-open common
+open Common
 
 //Usually just uncomment the test you are working on
 let underDevelopment () =
-  //actions.all()
-  //assertions.all()
-  //elementz.all()
-  misc.all()
+  //Actions.all()
+  //Assertions.all()
+  //Elementz.all()
+  Misc.all()
 
 let all =
   [
-    Actions,    Smoke, actions.smoke
-    Assertions, Smoke, assertions.smoke
-    Elements,   Smoke, elementz.smoke
-    Misc,       Smoke, misc.smoke
+    Actions,    Smoke, Actions.smoke
+    Assertions, Smoke, Assertions.smoke
+    Elements,   Smoke, Elementz.smoke
+    Misc,       Smoke, Misc.smoke
 
-    Actions,    Full, actions.full
-    Assertions, Full, assertions.full
-    Elements,   Full, elementz.full
-    Misc,       Full, misc.full
+    Actions,    Full, Actions.full
+    Assertions, Full, Assertions.full
+    Elements,   Full, Elementz.full
+    Misc,       Full, Misc.full
   ]
 
 let register tag testType =

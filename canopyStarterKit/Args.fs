@@ -1,7 +1,7 @@
-module args
+module Args
 
 open Argu
-open common
+open Common
 
 type private CLIArguments =
   | Browser of string
@@ -17,10 +17,10 @@ type private CLIArguments =
 
 let parse cliargs =
   let parser = ArgumentParser.Create<CLIArguments>()
-  let results = parser.Parse(cliargs)
+  let results = parser.Parse(cliargs, errorHandler=ProcessExiter())
 
   {
-    Browser = results.PostProcessResult (<@ Browser @>, fromString<canopy.types.BrowserStartMode>)
-    Tag = results.PostProcessResult (<@ Tag @>, fromString<Tag>)
-    TestType = results.PostProcessResult (<@ TestType @>, fromString<TestType>)
+    Browser = defaultArg (results.TryPostProcessResult (<@ Browser @>, fromString<canopy.types.BrowserStartMode>)) canopy.types.BrowserStartMode.Chrome
+    Tag = defaultArg (results.TryPostProcessResult (<@ Tag @>, fromString<Tag>)) Tag.All
+    TestType = defaultArg (results.TryPostProcessResult (<@ TestType @>, fromString<TestType>)) TestType.Smoke
   }

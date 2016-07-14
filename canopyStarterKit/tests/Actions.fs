@@ -1,11 +1,11 @@
-module actions
+module Actions
 
 open canopy
-open page_index
+open PageIndex
 
 let smoke () =
   context "smoke actions"
-  before (fun _ -> url page_index.uri)
+  before (fun _ -> url PageIndex.uri)
 
   "clearing #firstName sets text to new empty string" &&& fun _ ->
     clear firstName
@@ -28,7 +28,7 @@ let smoke () =
 
 let full () =
   context "full actions"
-  before (fun _ -> url page_index.uri)
+  before (fun _ -> url PageIndex.uri)
 
   "clearing #firstName sets text to new empty string via IWebElement" &&& fun _ ->
     element firstName |> clear

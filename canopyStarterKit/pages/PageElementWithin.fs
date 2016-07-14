@@ -1,4 +1,4 @@
-module page_elementWithin
+module PageElementWithin
 
 let uri = "http://lefthandedgoat.github.io/canopy/testpages/elementWithin"
 
