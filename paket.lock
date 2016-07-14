@@ -1,19 +1,9 @@
 NUGET
   remote: https://www.nuget.org/api/v2
-  specs:
     Argu (2.1)
-    canopy (0.9.45)
+    canopy (0.9.56)
       FSharp.Core (>= 3.0.2)
-      Selenium.Support (2.52.0)
-      Selenium.WebDriver (2.52.0)
-      SizSelCsZzz (0.3.36)
-    FAKE (4.20.0)
+      Selenium.WebDriver (2.53.1)
+    FAKE (4.31.1)
     FSharp.Core (4.0.0.1)
-    Newtonsoft.Json (8.0.2)
-    Selenium.Support (2.52.0)
-      Selenium.WebDriver (>= 2.52.0)
-    Selenium.WebDriver (2.52.0)
-    SizSelCsZzz (0.3.36)
-      Newtonsoft.Json (>= 6.0)
-      Selenium.Support (>= 2.40)
-      Selenium.WebDriver (>= 2.40)
+    Selenium.WebDriver (2.53.1)
