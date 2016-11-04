@@ -82,6 +82,9 @@
     <None Include="chromedriver.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+	<None Include="geckodriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="chromedriver">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
