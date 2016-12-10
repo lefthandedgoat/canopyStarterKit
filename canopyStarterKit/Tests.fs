@@ -2,13 +2,20 @@ module Tests
 
 open Common
 
-//Usually just uncomment the test you are working on
+//The default argument passed from the console in the starter kit is UnderDevelopment
+//This lets you simply comment/uncomment the test context/suite that you are working on
+//As you add more tests for different pages, add an entry here
 let underDevelopment () =
   //Actions.all()
   //Assertions.all()
   //Elementz.all()
   Misc.all()
 
+//This is a list of all tests, which is useful when running in a CI environment where you want to
+//run all tests, or a specific type of test like Full/Smoke, or tests for a specific
+//page or set of functionality
+//Its is a list of a tuple of 3 things, a Tag, TestType, and a the function that wraps your actual tests
+//As you add more tests for different pages, add an entry/entries here
 let all =
   [
     Actions,    Smoke, Actions.smoke
@@ -21,7 +28,9 @@ let all =
     Elements,   Full, Elementz.full
     Misc,       Full, Misc.full
   ]
-
+  
+//Code below does not need to be changed in most cases, it simply takes all of the tests and removes ones that dont
+//meet the tags provided from arguments
 let register tag testType =
   let exec predicate =
     all

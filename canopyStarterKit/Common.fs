@@ -11,6 +11,7 @@ let fromString<'a> s =
 let executingDir () = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)
 
 //types
+//A Tag is a description of a type of tests you may want to run, generally covering a page or set of functionality
 type Tag =
   | All
   | Actions
@@ -18,6 +19,7 @@ type Tag =
   | Elements
   | Misc
 
+//A TestType lets you break tests up in a second way, not by functionality, but maybe by coverage, or environment
 type TestType =
   | All
   | Smoke
