@@ -98,8 +98,11 @@ Target "CopyBinaries" (fun _ ->
 
 Target "RenameDrivers" (fun _ ->
     match Environment.OSVersion.Platform with
-    |  PlatformID.MacOSX -> Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_macOS"
-    |  PlatformID.Unix -> Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_linux64"
+    |  PlatformID.Unix ->
+         if Environment.OSVersion.VersionString.Contains("Unix 4.") //linux kernel 4.x
+         then Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_linux64"
+         //assume macOS (the enum for macOS actually returns Unix so we have to cheese it)
+         else Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_macOS"
     |  _ -> ()
 )
 
