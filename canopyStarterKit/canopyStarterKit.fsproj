@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -60,38 +60,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Compile Include="Common.fs" />
-    <Compile Include="Args.fs" />
-    <Compile Include="pages/PageElementWithin.fs" />
-    <Compile Include="pages/PageIndex.fs" />
-    <Compile Include="tests/Actions.fs" />
-    <Compile Include="tests/Assertions.fs" />
-    <Compile Include="tests/Elements.fs" />
-    <Compile Include="tests/Misc.fs" />
-    <Compile Include="Tests.fs" />
-    <Compile Include="Program.fs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="chromedriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-	<None Include="geckodriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="chromedriver">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Content Include="App.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
@@ -112,13 +80,6 @@
       </ItemGroup>
     </When>
   </Choose>
-  <ItemGroup>
-    <Reference Include="canopy">
-      <HintPath>..\packages\canopy\lib\canopy.dll</HintPath>
-      <Private>True</Private>
-      <Paket>True</Paket>
-    </Reference>
-  </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5')">
       <ItemGroup>
@@ -210,4 +171,42 @@
       </ItemGroup>
     </When>
   </Choose>
+  <ItemGroup>
+    <Compile Include="Common.fs" />
+    <Compile Include="Args.fs" />
+    <Compile Include="pages/PageElementWithin.fs" />
+    <Compile Include="pages/PageIndex.fs" />
+    <Compile Include="tests/Actions.fs" />
+    <Compile Include="tests/Assertions.fs" />
+    <Compile Include="tests/Elements.fs" />
+    <Compile Include="tests/Misc.fs" />
+    <Compile Include="Tests.fs" />
+    <Compile Include="Program.fs" />
+    <None Include="chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="geckodriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="chromedriver_linux64">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="chromedriver_macOS">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="canopy">
+      <HintPath>..\packages\canopy\lib\canopy.dll</HintPath>
+      <Private>True</Private>
+      <Paket>True</Paket>
+    </Reference>
+  </ItemGroup>
 </Project>

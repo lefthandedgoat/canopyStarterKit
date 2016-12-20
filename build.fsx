@@ -94,6 +94,16 @@ Target "CopyBinaries" (fun _ ->
 )
 
 // --------------------------------------------------------------------------------------
+// Rename driver for macOS or Linux
+
+Target "RenameDrivers" (fun _ ->
+    match Environment.OSVersion.Platform with
+    |  PlatformID.MacOSX -> Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_macOS"
+    |  PlatformID.Unix -> Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_linux64"
+    |  _ -> ()
+)
+
+// --------------------------------------------------------------------------------------
 // Clean build results
 
 Target "Clean" (fun _ ->
@@ -134,6 +144,7 @@ Target "BuildStuff" DoNothing
   ==> "AssemblyInfo"
   ==> "Build"
   ==> "CopyBinaries"
+  ==> "RenameDrivers"
   ==> "BuildStuff"
 
 "BuildStuff"
