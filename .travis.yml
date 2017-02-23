@@ -2,14 +2,6 @@ language: csharp
 sudo: true  # use the new container-based Travis infrastructure
 dist: trusty
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - libstdc++-4.9-dev
-      - libunwind8-dev
-
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
