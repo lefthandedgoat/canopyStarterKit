@@ -1,9 +1,12 @@
+FRAMEWORK: NET45
 NUGET
   remote: https://www.nuget.org/api/v2
     Argu (2.1)
-    canopy (1.0.0)
+    canopy (1.1.4)
       FSharp.Core (>= 3.0.2)
-      Selenium.WebDriver (3.0.0)
-    FAKE (4.31.1)
-    FSharp.Core (4.0.0.1)
-    Selenium.WebDriver (3.0.0)
+      Selenium.WebDriver (3.0)
+    FAKE (4.52)
+    FSharp.Core (4.1) - redirects: force
+      System.ValueTuple (>= 4.3)
+    Selenium.WebDriver (3.0)
+    System.ValueTuple (4.3) - redirects: force
