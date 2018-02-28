@@ -1,4 +1,4 @@
-FRAMEWORK: NET45
+RESTRICTION: == net45
 NUGET
   remote: https://www.nuget.org/api/v2
     Argu (2.1)
@@ -9,4 +9,8 @@ NUGET
     FSharp.Core (4.1) - redirects: force
       System.ValueTuple (>= 4.3)
     Selenium.WebDriver (3.0)
+    Selenium.WebDriver.ChromeDriver (2.35)
+    Selenium.WebDriver.GeckoDriver (0.19.1)
+    Selenium.WebDriver.GeckoDriver.Win32 (0.19.1)
+      Selenium.WebDriver.GeckoDriver (>= 0.19.1)
     System.ValueTuple (4.3) - redirects: force
