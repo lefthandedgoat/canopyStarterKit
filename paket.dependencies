@@ -7,3 +7,6 @@ nuget FSharp.Core redirects:force
 nuget FAKE
 nuget canopy
 nuget argu
+
+nuget Selenium.WebDriver.ChromeDriver
+nuget Selenium.WebDriver.GeckoDriver.Win32
