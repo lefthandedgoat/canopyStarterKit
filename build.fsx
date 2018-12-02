@@ -102,7 +102,9 @@ Target "RenameDrivers" (fun _ ->
          if Environment.OSVersion.VersionString.Contains("Unix 4.") //linux kernel 4.x
          then Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_linux64"
          //assume macOS (the enum for macOS actually returns Unix so we have to cheese it)
-         else Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_macOS"
+         else 
+            Fake.FileHelper.Rename "bin/canopyStarterKit/chromedriver" "bin/canopyStarterKit/chromedriver_macOS"
+            Fake.ProcessHelper.Shell.Exec("chmod", "+x bin/canopyStarterKit/chromedriver") |> ignore
     |  _ -> ()
 )
 
