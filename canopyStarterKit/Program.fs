@@ -13,7 +13,8 @@ let main argv =
   //Parse all the args into the types that we use in the rest of the code
   let args = Args.parse argv
 
-  configuration.chromeDir <- executingDir()
+  // configuration.chromeDir <- executingDir()
+  configuration.chromeDir <- "/Users/serhii.kalinets/Downloads"
   reporter <- LiveHtmlReporter(BrowserStartMode.Chrome, configuration.chromeDir) :> IReporter
   reporter.setEnvironment "canopy test page"
 
