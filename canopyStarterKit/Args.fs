@@ -17,7 +17,7 @@ type private CLIArguments =
 
 let parse cliargs =
   let parser = ArgumentParser.Create<CLIArguments>()
-  let results = parser.Parse(cliargs, errorHandler=ProcessExiter())
+  let results = parser.Parse(cliargs)
 
   {
     Browser = defaultArg (results.TryPostProcessResult (<@ Browser @>, fromString<canopy.types.BrowserStartMode>)) canopy.types.BrowserStartMode.Chrome

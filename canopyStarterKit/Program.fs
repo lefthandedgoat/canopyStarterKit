@@ -1,8 +1,12 @@
 module Program
 
 open canopy
+open configuration
 open reporters
 open Common
+open canopy.types
+open canopy.classic
+open canopy.runner.classic
 
 [<EntryPoint>]
 let main argv =
@@ -10,7 +14,7 @@ let main argv =
   let args = Args.parse argv
 
   configuration.chromeDir <- executingDir()
-  reporter <- new LiveHtmlReporter(Chrome, configuration.chromeDir) :> IReporter
+  reporter <- LiveHtmlReporter(BrowserStartMode.Chrome, configuration.chromeDir) :> IReporter
   reporter.setEnvironment "canopy test page"
 
   //Start the browser supplied in args
@@ -26,4 +30,4 @@ let main argv =
   quit ()
 
   //return code
-  canopy.runner.failedCount
+  runner.classic.failedCount

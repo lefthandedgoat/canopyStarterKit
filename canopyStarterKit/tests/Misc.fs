@@ -1,6 +1,7 @@
 module Misc
 
-open canopy
+open canopy.runner.classic
+open canopy.classic
 
 let smoke () =
   context "smoke tests for misc canopy features"

@@ -1,7 +1,8 @@
 module Elementz
 
-open canopy
 open PageElementWithin
+open canopy.runner.classic
+open canopy.classic
 
 let smoke () =
   context "smoke elements"

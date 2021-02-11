@@ -1,6 +1,7 @@
 module Actions
 
-open canopy
+open canopy.runner.classic
+open canopy.classic
 open PageIndex
 
 let smoke () =
