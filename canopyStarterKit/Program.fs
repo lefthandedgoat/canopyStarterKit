@@ -21,8 +21,9 @@ let main argv =
   //Start the browser supplied in args
   start args.Browser
 
+  // pin FullScreen
   //Register the tests that you want to run (under development, a specific page, all tests, etc)
-  Tests.register args.Tag args.TestType
+  Tests.register args.Tag UnderDevelopment
   //Run tests
   run()
 

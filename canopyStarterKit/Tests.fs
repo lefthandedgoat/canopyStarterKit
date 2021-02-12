@@ -9,7 +9,7 @@ let underDevelopment () =
   //Actions.all()
   //Assertions.all()
   //Elementz.all()
-  Misc.all()
+  Misc.pmTest()
 
 //This is a list of all tests, which is useful when running in a CI environment where you want to
 //run all tests, or a specific type of test like Full/Smoke, or tests for a specific
