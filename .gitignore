@@ -187,10 +187,7 @@ docs/content/license.md
 docs/content/release-notes.md
 .fake
 docs/tools/FSharp.Formatting.svclog
-<<<<<<< HEAD
-=======
 
-# Created by https://www.toptal.com/developers/gitignore/api/vim
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim
 
 ### Vim ###
@@ -250,4 +247,3 @@ bin
 
 # End of https://www.toptal.com/developers/gitignore/api/fsharp
 
->>>>>>> c01a55d... initial commit
