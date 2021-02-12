@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>canopy_test</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Common.fs" />
+    <Compile Include="Args.fs" />
+    <Compile Include="pages/PageElementWithin.fs" />
+    <Compile Include="pages/PageIndex.fs" />
+    <Compile Include="tests/Actions.fs" />
+    <Compile Include="tests/Assertions.fs" />
+    <Compile Include="tests/Elements.fs" />
+    <Compile Include="tests/Misc.fs" />
+    <Compile Include="Tests.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="argu" Version="6.1.1" />
+    <PackageReference Include="canopy" Version="2.1.5" />
+  </ItemGroup>
+
+</Project>
